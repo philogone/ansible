@@ -1,0 +1,12 @@
+#install_test.yml
+---
+- hosts: all
+  tasks:
+    - name: 1. install packets
+      yum: name={{item}} state=present
+      with_items:
+       - iptraf-ng
+       - htop
+       - terminator
+       - nmap
+       - aircrack-ng
